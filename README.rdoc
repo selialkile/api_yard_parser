@@ -1,3 +1,14 @@
 = ApiYardParser
 
 This project rocks and uses MIT-LICENSE.
+
+1. REQUIREMENTS
+===============
+
+Ruby/ApiYardParser requires Ruby version 1.9.1 or newer and Rails ~> 3.2.16.
+
+2. INSTALLATION
+===============
+
+gem install api_yard_parser
+
