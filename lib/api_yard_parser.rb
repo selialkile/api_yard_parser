@@ -1,3 +1,6 @@
+
+require "active_support/dependencies"
+
 module ApiYardParser
 	# %w(api_comment api_controllers ap_docs).each do |entity|
  #    require_relative "api_yard_parser/#{entity}"
@@ -9,4 +12,7 @@ module ApiYardParser
   def force_no_docs_production
   	true || @production
   end
+
 end
+
+require "api_yard_parser/engine"

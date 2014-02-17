@@ -2,7 +2,6 @@ $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
 require "api_yard_parser/version"
-
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "api_yard_parser"
@@ -17,5 +16,5 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.16"
-
+  s.require_path = 'lib'
 end

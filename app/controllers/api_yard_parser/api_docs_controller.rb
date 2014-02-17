@@ -6,7 +6,7 @@ module ApiYardParser
         render :text => "dont have docs in production"
         return true
       end
-      @list_apis = ApiParser::ApiDocs.get_all
+      @list_apis = ApiDocs.get_all
 
       @without = params[:without].split(",") if !params[:without].nil?
 

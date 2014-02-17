@@ -9,12 +9,11 @@ def class_by_verb(verb)
   }
   items[verb]
 end
-
 %>
 <!DOCTYPE html>
 <html class="colorNavyBlue">
 <head>
-  <title>ApiDocs</title>
+  <title>ApiDocs - <%=Rails.application.class.to_s.split("::").first%></title>
   <link rel="stylesheet" type="text/css" href="https://assets.locaweb.com.br/locastyle/1.1.9/locastyle.css">
   <script type="text/javascript" src="https://assets.locaweb.com.br/locastyle/1.1.9/locastyle.js"></script>
   <link rel="stylesheet" type="text/css" href="https://assets.locaweb.com.br/locastyle/1.1.9/bootstrap.css">
@@ -23,7 +22,7 @@ end
 <body>
   <header class="headerPrincipal">
     <div class="limite">
-      <h1 class="serviceName"><a href="/">ApiDocs</a></h1>
+      <h1 class="serviceName"><a href="/">ApiDocs - <%=Rails.application.class.to_s.split("::").first%></a></h1>
     </div>
 
     <menu id="menuPrincipal">
