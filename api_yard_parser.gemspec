@@ -6,11 +6,11 @@ require "api_yard_parser/version"
 Gem::Specification.new do |s|
   s.name        = "api_yard_parser"
   s.version     = ApiYardParser::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ApiYardParser."
-  s.description = "TODO: Description of ApiYardParser."
+  s.authors     = ["Thiago Coutinho"]
+  s.email       = ["thiago@osfieo.com / thiago.coutinho@locaweb.com.br"]
+  s.homepage    = ""
+  s.summary     = "This gem parse a yard doc and generate a page with api description"
+  s.description = "This gem parse a yard doc and generate a page with api description"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
