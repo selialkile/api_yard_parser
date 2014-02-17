@@ -1,0 +1,151 @@
+<%
+
+def class_by_verb(verb)
+  items ={
+    "GET"=>"label-success",
+    "POST" => "label-info",
+    "PUT" => "label-warning",
+    "DELETE" => "label-important",
+  }
+  items[verb]
+end
+
+%>
+<!DOCTYPE html>
+<html class="colorNavyBlue">
+<head>
+  <title>ApiDocs</title>
+  <link rel="stylesheet" type="text/css" href="https://assets.locaweb.com.br/locastyle/1.1.9/locastyle.css">
+  <script type="text/javascript" src="https://assets.locaweb.com.br/locastyle/1.1.9/locastyle.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://assets.locaweb.com.br/locastyle/1.1.9/bootstrap.css">
+  <script type="text/javascript" src="https://assets.locaweb.com.br/locastyle/1.1.9/bootstrap.js"></script>
+</head>
+<body>
+  <header class="headerPrincipal">
+    <div class="limite">
+      <h1 class="serviceName"><a href="/">ApiDocs</a></h1>
+    </div>
+
+    <menu id="menuPrincipal">
+      <ul>
+        <li class=''>
+          <a href="#">Docs by Controllers</a>
+        </li>
+      </ul>
+    </menu>
+  </header>
+
+  <div id="main">
+    <div class="limite">
+
+
+      <% @list_apis.each do |api| %>
+      <% if api.routes.count > 0  %>
+      <!--  init ###<%= api.name %>####   -->
+      <div class="row">
+        <div class="span12">
+          <div class="alert alert-warning" style="display:none">
+            <a class="close" data-dismiss="alert">×</a>
+            <strong>Informação!</strong> Uma informação qualquer do seu sistema. <a href="#">Um link qualquer</a>.
+          </div>
+
+          <div class="">
+            <h2><%= api.name %></h2>
+            <% api.routes.each do |route| %>
+            <div class="boxCollapse">
+              <header data-target="#api_routes_<%=route.object_id%>" data-toggle="collapse">
+                <h4><span class="label <%=class_by_verb(route.type)%>" style="color:white;"><%=route.type%></span>
+                  <strong>&nbsp;&nbsp;&nbsp;<%=route.url%> </strong> - <%=route.description%></h4>
+                </header>
+                <div class="collapse" id="api_routes_<%=route.object_id%>">
+                  <% if !route.params.nil? && route.params.count>0%>
+                    <p> 
+                      <div class="alert alert-success">
+                        <h3> Params </h3>
+                        <div>
+                          <% route.params.each do |param| %>
+                          <p>
+                            <span><b>  <%=param[:name]%> </b> </span> - 
+                            <span ><%=param[:type]%></span> - 
+                            <span><%=param[:description]%></span> 
+                          </p>
+                          <%end%>
+                        </div>
+                      </div>
+                    </p>
+                  <%end%>
+                  <% if !route.returns.nil? && route.returns.count>0%>
+                    <% route.returns.each do |myreturn| %>
+                      <p> 
+                        <div class="alert alert-info">
+                          <h4> Return </h4>
+                          <div>
+                           
+                            <%=myreturn[:name]%> - <%=myreturn[:description]%>
+                            <br>
+                            <%=myreturn[:type]%>:
+                              <%if !myreturn[:body].nil? %>
+                                <pre class="lang-json prettyprint linenums"><%=myreturn[:body]%></pre>
+                              <%end%>
+                            
+                          </div>
+                        </div>
+                      </p>
+                    <%end%>
+                  <%end%>
+                  <% if !route.example.nil? %>
+                  <p> 
+                    <div class="alert">
+                      <h3> Example </h3>
+                      <div>
+                        <%= route.example%>
+                      </div>
+                    </div>
+                  </p>
+                  <%end%>
+                  <% if !route.notes.nil? && route.notes.count>0%>
+                  <p> 
+                    <div class="alert">
+                      <h3> Notes </h3>
+                      <div>
+                        <% route.notes.each do |note|%>
+                        <p><%=note%></p>
+                        <%end%>
+                      </div>
+                    </div>
+                  </p>
+                  <%end%>
+                </div>
+              </div>
+              <% end #end collapse%>
+            </div>
+
+          </div>
+
+        </div><!-- FIM ROW -->
+        <!--  end ###<%= api.name %>####   -->
+        <% end
+        end # end list_apis.each %>
+
+    </div><!-- FIM LIMITE -->
+
+
+
+        <footer id="rodape">
+          <div class="footerTop">
+            <div class="limite">
+
+            </div>
+          </div>
+          <div class="subfooter">
+            <div class="limite">
+              <p class="copyRight fright">Copyright © 2014 Thiago Coutinho thiago+@+osfeio.com</p>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+  </body>
+  </html>
