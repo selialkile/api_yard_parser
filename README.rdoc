@@ -28,54 +28,52 @@ http://localhost:XXXX/docs
 
 For your controller add the yard doc:
 
-```ruby
-class ApiController < ApplicationController
 
-  # Infos of domain
-  # @note 
-  #   [ Receive parameters from GET]
-  #     https://{APP_URL}/api/:domain
-  #
-  # @param [String] :domain => Domain name
-  # @return [JSON] Response HTTP 412 - Precondition Failed -> Parameters not valid  
-  # @return [JSON] Response HTTP 500 - Internal error 
-  # @return [JSON] Response HTTP 200 - Show -> Info of domain
-  #
-  #      {
-  #          "domain": "something.com",
-  #      }
-  def infos
-  ...
+  class ApiController < ApplicationController
+
+    # Infos of domain
+    # @note 
+    #   [ Receive parameters from GET]
+    #     https://{APP_URL}/api/:domain
+    #
+    # @param [String] :domain => Domain name
+    # @return [JSON] Response HTTP 412 - Precondition Failed -> Parameters not valid  
+    # @return [JSON] Response HTTP 500 - Internal error 
+    # @return [JSON] Response HTTP 200 - Show -> Info of domain
+    #
+    #      {
+    #          "domain": "something.com",
+    #      }
+    def infos
+    ...
+    end
+
   end
 
-end
-```
 
 or......
 
-```ruby
 
-class ApiController < ApplicationController
+  class ApiController < ApplicationController
 
-  # Toggle status of alias from domain
-  # @type PUT
-  # @url https://:APP_URL/domains/:domain/toggle
-  #
-  # @param [String] domain       -> Name of domain. Parameter in url
-  #
-  # @return [JSON] Response HTTP 201 - Ok -> Updated
-  #
-  #    {
-  #        "domain": "msf.com",
-  #        "status": "enabled"
-  #    }
-  #
-  # @return [JSON] Response HTTP 404 - Not Found -> Domain doesn't exists
-  # @return [JSON] Response HTTP 404 - Not Found -> Alias doesn't exists
-  # @return [JSON] Response HTTP 500 - Internal server error
-  def toggle_status
-  ...
+    # Toggle status of alias from domain
+    # @type PUT
+    # @url https://:APP_URL/domains/:domain/toggle
+    #
+    # @param [String] domain       -> Name of domain. Parameter in url
+    #
+    # @return [JSON] Response HTTP 201 - Ok -> Updated
+    #
+    #    {
+    #        "domain": "msf.com",
+    #        "status": "enabled"
+    #    }
+    #
+    # @return [JSON] Response HTTP 404 - Not Found -> Domain doesn't exists
+    # @return [JSON] Response HTTP 404 - Not Found -> Alias doesn't exists
+    # @return [JSON] Response HTTP 500 - Internal server error
+    def toggle_status
+    ...
+    end
+
   end
-
-end
-```
