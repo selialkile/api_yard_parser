@@ -25,7 +25,7 @@ or
 
 Try....
 
-http://localhost:<port>/docs
+http://localhost:XXXX/docs
 
 3. Examples
 ===============
