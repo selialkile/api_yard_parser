@@ -15,12 +15,13 @@ Ruby/ApiYardParser requires Ruby version 1.9.1 or newer and Rails ~> 3.2.16.
 
 Add to Gemfile:
 
-gem 'api_yard_parser'
-bundle install
+  gem 'api_yard_parser'
+
+  bundle install
 
 or 
 
-gem install api_yard_parser
+  gem install api_yard_parser
 
 3. Examples
 ===============
