@@ -1,5 +1,4 @@
-
-module ApiParser
+module ApiYardParser
   class ApiComment
     attr_reader :url, :type, :params, :returns, :description, :example, :notes
 

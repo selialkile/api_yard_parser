@@ -1,4 +1,4 @@
-module ApiParser
+module ApiYardParser
   class ApiDocs
 
     attr_accessor :controller_dirs

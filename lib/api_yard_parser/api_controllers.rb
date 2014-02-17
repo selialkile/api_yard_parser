@@ -1,5 +1,4 @@
-module ApiParser
-
+module ApiYardParser
   class ApiControllers
     attr_accessor :name, :routes
 
