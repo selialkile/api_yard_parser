@@ -23,6 +23,10 @@ or
 
   gem install api_yard_parser
 
+Try....
+
+http://localhost:<port>/docs
+
 3. Examples
 ===============
 
