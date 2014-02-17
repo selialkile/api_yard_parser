@@ -2,6 +2,9 @@
 
 This project rocks and uses MIT-LICENSE.
 
+Developed in Locaweb by Thiago Coutinho.
+www.locaweb.com.br
+
 1. REQUIREMENTS
 ===============
 
