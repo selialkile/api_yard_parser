@@ -1,9 +1,9 @@
 module ApiYardParser
-  class ApiDocsController < ::ApplicationController
+  class ApiDocsController < ::ActionController::Base
 
     def index
-      if Rails.env == "production" && ApiYardParser.force_no_docs_production
-        render :text => "dont have docs in production"
+      if Rails.env == "production" && ApiYardParser.no_docs_in_production
+        render :text => "no docs in production"
         return true
       end
       @list_apis = ApiDocs.get_all

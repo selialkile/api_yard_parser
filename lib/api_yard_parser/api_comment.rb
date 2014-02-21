@@ -72,6 +72,7 @@ module ApiYardParser
         @type = res[0]
         @url = res[1]
       end
+      @notes = lines
     end
 
     def parse_auto_example
