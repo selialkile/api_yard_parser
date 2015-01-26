@@ -21,6 +21,7 @@ module ApiYardParser
           parse_auto_example if type == "auto-example"
         end
       end
+      @type = "GET" if @type.blank?
     end
 
     def parse_text(text)
